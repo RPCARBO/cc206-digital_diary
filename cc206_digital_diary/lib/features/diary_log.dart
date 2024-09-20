@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
 class DiaryLog extends StatelessWidget {
-  // ignore: use_super_parameters
   const DiaryLog({Key? key}) : super(key: key); 
 
-  final String diaryEntry = "Today is my birthday, happy birthday to me!"; // Pre-made text fro the app
-    final Icon icon = const Icon(
-      Icons.cake,
-      size: 90.0, // Set your size of icon(birthday cake) here
+  final String diaryEntry = "Today is my birthday, happy birthday to me!";
+  static const Icon icon = Icon(
+    Icons.cake,
+    size: 90.0,
   );
 
   @override
@@ -20,12 +19,18 @@ class DiaryLog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            icon, // Display the icon
+            icon, // Display the icon widget
             const SizedBox(height: 30), 
             Text(
-              diaryEntry, // Display the pre-made text in the website
+              diaryEntry,
               style: const TextStyle(fontSize: 30),
             ),
+            const SizedBox(height: 30),
+            Image.asset(
+              'images/birthday.png', 
+              width: 200, // Increase width
+              height: 200, // Increase height
+            ), // Place image below the text
           ],
         ),
       ),
