@@ -4,6 +4,7 @@ class DiaryLog extends StatefulWidget {  // Rename MyApp to DiaryLog
   const DiaryLog({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _DiaryLogState createState() => _DiaryLogState();  // Rename _MyAppState to _DiaryLogState
 }
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'features/diary_log.dart';  // Import the DiaryLog widget
+import 'features/diary_log-Carbo.dart';  // Import the DiaryLog widget
 
 void main() {
   runApp(const MyApp());
@@ -10,9 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       title: 'Digital Diary',
-      home: const DiaryLog(),  // Use DiaryLog as the home widget
+      home: DiaryLog(),  // Use DiaryLog as the home widget
     );
   }
 }
