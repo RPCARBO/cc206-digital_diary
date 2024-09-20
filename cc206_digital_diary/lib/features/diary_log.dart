@@ -1,62 +1,34 @@
 import 'package:flutter/material.dart';
 
-class DiaryLog extends StatefulWidget {  // Rename MyApp to DiaryLog
-  const DiaryLog({super.key});
+class DiaryLog extends StatelessWidget {
+  // ignore: use_super_parameters
+  const DiaryLog({Key? key}) : super(key: key); 
 
-  @override
-  // ignore: library_private_types_in_public_api
-  _DiaryLogState createState() => _DiaryLogState();  // Rename _MyAppState to _DiaryLogState
-}
-
-class _DiaryLogState extends State<DiaryLog> {  // Rename _MyAppState to _DiaryLogState
-  final TextEditingController _controller = TextEditingController();
-  String _userInput = '';
+  final String diaryEntry = "Today is my birthday, happy birthday to me!"; // Pre-made text fro the app
+    final Icon icon = const Icon(
+      Icons.cake,
+      size: 90.0, // Set your size of icon(birthday cake) here
+  );
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(  // No need for MaterialApp here, just the Scaffold
+    return Scaffold(
       appBar: AppBar(
         title: const Text('Digital Diary'),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          // TextField to take user input
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: TextField(
-              controller: _controller,
-              decoration: const InputDecoration(
-                hintText: 'Enter your diary entry here',
-              ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            icon, // Display the icon
+            const SizedBox(height: 30), 
+            Text(
+              diaryEntry, // Display the pre-made text in the website
+              style: const TextStyle(fontSize: 30),
             ),
-          ),
-
-          // Button to submit input
-          ElevatedButton(
-            onPressed: () {
-              setState(() {
-                _userInput = _controller.text;  // Update _userInput with the text entered by the user
-                _controller.clear();  // Clear the TextField after submission
-              });
-            },
-            child: const Text('Submit'),
-          ),
-
-          // Display the user's input
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: Text(
-              _userInput.isNotEmpty ? 'Your Entry: $_userInput' : 'No entry yet.',
-              style: const TextStyle(fontSize: 16),
-            ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
-}
-
-void main() {
-  runApp(const DiaryLog());  // Update this to use DiaryLog
 }
