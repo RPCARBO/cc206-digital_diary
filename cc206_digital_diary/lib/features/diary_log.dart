@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'display_user_avatar.dart'; // Import the UserAvatar widget
 
 class DiaryLog extends StatelessWidget {
   DiaryLog({Key? key}) : super(key: key); 
@@ -19,6 +20,10 @@ class DiaryLog extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
+            // Add UserAvatar at the top with default radius
+            UserAvatar(
+              imageUrl: 'https://example.com/avatar.png', // Replace with a real URL
+            ),
             icon, // Display the icon
             const SizedBox(height: 30), 
             Text(
