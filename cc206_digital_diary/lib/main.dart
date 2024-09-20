@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'features/diary_log.dart';  // Import the DiaryLog widget
+import 'features/display_user_avatar.dart';
 
 void main() {
   runApp(const MyApp());
