@@ -15,7 +15,7 @@ class UserAvatar extends StatelessWidget {
     return CircleAvatar(
       radius: radius,
       backgroundImage: NetworkImage(imageUrl),
-      backgroundColor: const Color.fromARGB(255, 255, 0, 0), // Placeholder color
+      backgroundColor: const Color.fromARGB(255, 255, 251, 0), // Placeholder color
     );
   }
 }
