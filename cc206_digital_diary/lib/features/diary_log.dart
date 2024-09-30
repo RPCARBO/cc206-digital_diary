@@ -22,25 +22,33 @@ class DiaryLog extends StatelessWidget {
         body: Column( // Main column to layout everything
           children: [
             const Spacer(), // Pushes the content below towards the center vertically
-            Row( // Added Row to horizontally display the avatar and icon
+            const Row( // Added Row to horizontally display the avatar and icon
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // User avatar (ensuring imageUrl is passed)
-                UserAvatar(
-                  imageUrl: 'https://example.com/avatar.png', // Replace with your actual image URL
-                ),
-                const SizedBox(width: 50), // Space between profile and cake icon
-                // Birthday cake icon
-                const Icon(
+                //Display the cake icon
+                Icon(
                   Icons.cake,
-                  size: 80.0, // Adjust the size of the icon
+                  size: 65.0, // Adjust the size of the icon
                 ),
+
+                SizedBox(width: 10), // Space between icon and avatar
+
+                Row(
+                  children: [
+                    UserAvatar(imageUrl: 'assets/avatar.jpg'), // Replace with your actual image URL
+                    SizedBox(width: 10),
+                    Text(
+                      "xXSigma_LordXx",
+                      style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    )
+                  ]
+                ),                            
               ],
             ),
             const SizedBox(height: 30), // Added space between Row and text
-            Center(
+            const Center(
               child: Column( // Use Column to display multiple lines of text
-                children: const [
+                children: [
                   Text(
                     "Happy birthday to me!", // First sentence
                     style: TextStyle(fontSize: 25), // Adjust font size

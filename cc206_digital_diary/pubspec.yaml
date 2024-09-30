@@ -65,6 +65,7 @@ flutter:
     - assets/bday3.jpg
     - assets/bday4.jpg
     - assets/birthday.png
+    - assets/avatar.jpg
   
 
   # An image asset can refer to one or more resolution-specific "variants", see
