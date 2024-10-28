@@ -1,8 +1,17 @@
 import 'package:flutter/material.dart';
+<<<<<<< Updated upstream
 import 'diary_log.dart';
 
 class HomePage extends StatefulWidget {  
   @override  
+=======
+
+class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+  
+  @override  
+  // ignore: library_private_types_in_public_api
+>>>>>>> Stashed changes
   _HomePageState createState() => _HomePageState();
 }
 
@@ -23,7 +32,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {    
     return Scaffold(      
       appBar: AppBar(        
+<<<<<<< Updated upstream
         title: Text('Home Page'),      
+=======
+        title: const Text('Home Page'),      
+>>>>>>> Stashed changes
       ),      
       body: Padding(        
         padding: const EdgeInsets.all(16.0),        
@@ -34,7 +47,11 @@ class _HomePageState extends State<HomePage> {
             children: [              
               TextFormField(                
                 controller: _emailController,                
+<<<<<<< Updated upstream
                 decoration: InputDecoration(labelText: 'Email'),                
+=======
+                decoration: const InputDecoration(labelText: 'Email'),                
+>>>>>>> Stashed changes
                 keyboardType: TextInputType.emailAddress,                
                 validator: (value) {                  
                   if (value == null || !RegExp(emailPattern).hasMatch(value)) {                    
@@ -43,10 +60,17 @@ class _HomePageState extends State<HomePage> {
                   return null;                
                 },              
               ),              
+<<<<<<< Updated upstream
               SizedBox(height: 16.0),              
               TextFormField(                
                 controller: _passwordController,                
                 decoration: InputDecoration(labelText: 'Password'),                
+=======
+              const SizedBox(height: 16.0),              
+              TextFormField(                
+                controller: _passwordController,                
+                decoration: const InputDecoration(labelText: 'Password'),                
+>>>>>>> Stashed changes
                 obscureText: true,                
                 validator: (value) {                  
                   if (value == null || !RegExp(passwordPattern).hasMatch(value)) {                    
@@ -55,10 +79,17 @@ class _HomePageState extends State<HomePage> {
                   return null;                
                 },              
               ),              
+<<<<<<< Updated upstream
               SizedBox(height: 32.0),              
               ElevatedButton(                
                 onPressed: _login,                
                 child: Text('Log In'),              
+=======
+              const SizedBox(height: 32.0),              
+              ElevatedButton(                
+                onPressed: _login,                
+                child: const Text('Log In'),              
+>>>>>>> Stashed changes
               ),            
             ],          
           ),        
