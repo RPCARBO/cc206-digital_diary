@@ -50,7 +50,7 @@ class _HomePageState extends State<HomePage> {
                 obscureText: true,                
                 validator: (value) {                  
                   if (value == null || !RegExp(passwordPattern).hasMatch(value)) {                    
-                    return 'Password must contain 1 capital letter and 1 number';                  
+                    return 'Password must contain a total of 6 characters, 1 capital letter ,and 1 number';                  
                   }                  
                   return null;                
                 },              
