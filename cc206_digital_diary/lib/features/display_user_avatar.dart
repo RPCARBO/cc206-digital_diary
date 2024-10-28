@@ -5,10 +5,10 @@ class UserAvatar extends StatelessWidget {
   final double radius;
 
   const UserAvatar({
-    Key? key,
+    super.key,
     required this.imageUrl,
     this.radius = 40.0,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
