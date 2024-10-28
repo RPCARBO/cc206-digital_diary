@@ -25,6 +25,8 @@ class _DiaryLogState extends State<DiaryLog> with SingleTickerProviderStateMixin
   late AnimationController _animationController;
   late Animation<double> _animation;
 
+  double _fontsize = 25.0;
+
   @override
   void initState() {
     super.initState();
@@ -90,6 +92,12 @@ class _DiaryLogState extends State<DiaryLog> with SingleTickerProviderStateMixin
     _intenseConfettiController.stop();
   }
 
+  void _onScaleUpdate(ScaleUpdateDetails details) {
+    setState(() {
+      _fontsize = 25.0 * details.scale.clamp(15.0, 50.0);
+    });
+  }
+
   @override  
   Widget build(BuildContext context) {    
     return Scaffold(      
@@ -101,6 +109,7 @@ class _DiaryLogState extends State<DiaryLog> with SingleTickerProviderStateMixin
         children: [
           GestureDetector(
             onHorizontalDragEnd: _onHorizontalDragEnd,
+            onScaleUpdate: _onScaleUpdate, // Scale update
             child: Column(          
               children: [            
                 const Spacer(), // Pushes the content below       
@@ -111,20 +120,25 @@ class _DiaryLogState extends State<DiaryLog> with SingleTickerProviderStateMixin
                       onTap: _onTapConfetti,
                       onLongPressStart: (_) => _onLongPressConfettiStart(),
                       onLongPressEnd: (_) => _onLongPressConfettiEnd(),
+
+                      child: Container(
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black, width: 2),
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                      padding: const EdgeInsets.all(8),
                       child: ScaleTransition(
                         scale: _animation,
-                        child: const Icon(                  
-                          Icons.cake,                  
-                          size: 65.0, // Adjust the size of the icon                
-                        ),
+                        child: const Icon(Icons.cake, size: 65.0),
                       ),
-                    ),                
+                      ),
+                    ),
                     const SizedBox(width: 10), // Space between icon and avatar                
-                    Row(                  
-                      children: [                    
-                        const UserAvatar(imageUrl: 'assets/avatar.jpg'), // temp avatar                 
-                        const SizedBox(width: 10),                    
-                        const Text(                      
+                    const Row(                  
+                      children: [                              
+                        UserAvatar(imageUrl: 'assets/avatar.jpg'), // temp avatar                       
+                        SizedBox(width: 10),                    
+                        Text(                      
                           "xXSigma_LordXx",                      
                           style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),                    
                         )                  
@@ -133,26 +147,26 @@ class _DiaryLogState extends State<DiaryLog> with SingleTickerProviderStateMixin
                   ],            
                 ),            
                 const SizedBox(height: 30), // Added space between Row and text/ adjust later           
-                const Center(              
+                Center(              
                   child: Column(                
                     children: [                  
                       Text(                    
                         "Happy birthday to me!", // First sentence                    
-                        style: TextStyle(fontSize: 25), // Adjust font size                  
+                        style: TextStyle(fontSize: _fontsize), // Adjust font size                  
                       ),                  
-                      SizedBox(height: 5), // Space between sentences                  
+                      const SizedBox(height: 5), // Space between sentences                  
                       Text(                    
                         "Today is my birthday", // Second sentence                    
-                        style: TextStyle(fontSize: 25),                  
+                        style: TextStyle(fontSize: _fontsize),                  
                       ),                  
-                      SizedBox(height: 5), // Space between sentences                  
+                      const SizedBox(height: 5), // Space between sentences                  
                       Text(                    
                         "I feel so happy", // Third sentence                    
-                        style: TextStyle(fontSize: 25),                  
+                        style: TextStyle(fontSize: _fontsize),                  
                       ),                
                     ],              
                   ),            
-                ),            
+                ),                            
                 const Spacer(),            
                 Container(
                   height: 200,
@@ -176,6 +190,9 @@ class _DiaryLogState extends State<DiaryLog> with SingleTickerProviderStateMixin
               ],        
             ),
           ),
+
+          
+
           Align(
             alignment: Alignment.topCenter, // confetti where it comes from
             child: ConfettiWidget(
