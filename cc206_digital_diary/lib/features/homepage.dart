@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
 
   void _login() {    
     if (_formKey.currentState!.validate()) {      
-      Navigator.pushNamed(context, '/diaryLog');    
+      Navigator.pushNamed(context, '/DiaryLog');    
     }  
   }
 
