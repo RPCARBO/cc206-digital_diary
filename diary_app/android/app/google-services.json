@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "592701245398",
+    "firebase_url": "https://flutter-diary-9d25d-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "flutter-diary-9d25d",
+    "storage_bucket": "flutter-diary-9d25d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:592701245398:android:8e23bd533604508e148677",
+        "android_client_info": {
+          "package_name": "com.mycompany.diaryapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "592701245398-bovs0hj5c87qj3thivaf9a99fnck24kk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA_XbjlxZ7poF1SUNKfzPlFBUYXq1f4-tg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592701245398-bovs0hj5c87qj3thivaf9a99fnck24kk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "592701245398-e5lv65mslsv9nqgq5oau7ig9nskbanu6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.mycompany.diaryapp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

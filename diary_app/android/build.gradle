@@ -1,0 +1,29 @@
+buildscript {
+    repositories {
+        google() // Google repository for Android tools
+        mavenCentral() // Maven repository for other dependencies
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:8.0.0' // Make sure this is correct based on your Gradle version
+        classpath 'com.google.gms:google-services:4.4.2' // Google Services plugin
+    }
+}
+
+allprojects {
+    repositories {
+        google() // Google repository for Flutter and Android dependencies
+        mavenCentral() // Maven repository for additional dependencies
+    }
+}
+
+rootProject.buildDir = "../build"
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(":app")
+}
+
+tasks.register("clean", Delete) {
+    delete rootProject.buildDir
+}
