@@ -50,7 +50,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
               children: [
                 Container(
                   width: double.infinity,
-                  height: MediaQuery.sizeOf(context).height * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.25,
                   decoration: BoxDecoration(
                     color: const Color(0xFFA72608),
                     borderRadius: BorderRadius.circular(7.0),
@@ -65,7 +65,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                       width: 200.0,
                       height: 200.0,
                       decoration: BoxDecoration(
-                        shape: BoxShape.circle,
+                        borderRadius: BorderRadius.circular(100.0),
                         border: Border.all(
                           color: const Color(0xFFA72608),
                           width: 2.0,
@@ -77,8 +77,8 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                           alignment: const AlignmentDirectional(0.0, 0.0),
                           child: AuthUserStreamWidget(
                             builder: (context) => Container(
-                              width: MediaQuery.sizeOf(context).width * 1.0,
-                              height: MediaQuery.sizeOf(context).width * 1.0,
+                              width: MediaQuery.of(context).size.width * 1.0,
+                              height: MediaQuery.of(context).size.width * 1.0,
                               clipBehavior: Clip.antiAlias,
                               decoration: const BoxDecoration(
                                 shape: BoxShape.circle,
