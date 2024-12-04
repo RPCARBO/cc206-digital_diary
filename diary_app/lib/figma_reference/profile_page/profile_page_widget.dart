@@ -10,6 +10,8 @@ import 'package:flutter/material.dart';
 import 'profile_page_model.dart';
 export 'profile_page_model.dart';
 
+// Rechecked and rebased the code, everything is correct.
+
 class ProfilePageWidget extends StatefulWidget {
   const ProfilePageWidget({super.key});
 
