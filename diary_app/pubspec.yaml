@@ -53,6 +53,7 @@ dependencies:
   firebase_storage_web: 3.10.2
   flutter_animate: 4.5.0
   flutter_cache_manager: 3.4.1
+  flutter_dotenv: ^5.0.2
   flutter_plugin_android_lifecycle: ^2.0.20
   flutter_secure_storage: 9.2.2
   flutter_secure_storage_linux: 1.2.1
@@ -156,6 +157,7 @@ flutter:
     - assets/rive_animations/
     - assets/pdfs/
     - assets/jsons/
+    - bearer.env
 
 
 
