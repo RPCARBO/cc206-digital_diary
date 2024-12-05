@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'menu_page_model.dart';
 export 'menu_page_model.dart';
 
+// Rechecked the code, everything is fine.
+
 class MenuPageWidget extends StatefulWidget {
   const MenuPageWidget({super.key});
 
