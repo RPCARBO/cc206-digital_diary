@@ -2,9 +2,9 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '../../customs/icon_button.dart';
-import '../../customs/ff_themes.dart';
+import '../../customs/themes.dart';
 import '../../customs/utils.dart';
-import '../../customs/ff_widgets.dart';
+import '../../customs/widgets.dart';
 import '../../customs/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'profile_page_model.dart';
@@ -138,12 +138,12 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                               selectedMedia.every((m) =>
                                   validateFileFormat(m.storagePath, context))) {
                             safeSetState(() => _model.isDataUploading = true);
-                            var selectedUploadedFiles = <FFUploadedFile>[];
+                            var selectedUploadedFiles = <UploadedFile>[];
 
                             var downloadUrls = <String>[];
                             try {
                               selectedUploadedFiles = selectedMedia
-                                  .map((m) => FFUploadedFile(
+                                  .map((m) => UploadedFile(
                                         name: m.storagePath.split('/').last,
                                         bytes: m.bytes,
                                         height: m.dimensions?.height,
@@ -267,7 +267,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         ),
                       ].divide(const SizedBox(height: 20.0)),
                     ),
-                    FFButtonWidget(
+                    ButtonWidget(
                       onPressed: () async {
                         GoRouter.of(context).prepareAuthEvent();
                         await authManager.signOut();
@@ -276,7 +276,7 @@ class _ProfilePageWidgetState extends State<ProfilePageWidget> {
                         context.goNamedAuth('Login', context.mounted);
                       },
                       text: 'Log out',
-                      options: FFButtonOptions(
+                      options: ButtonOptions(
                         width: 307.0,
                         height: 60.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(

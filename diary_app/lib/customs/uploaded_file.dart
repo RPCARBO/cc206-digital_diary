@@ -1,8 +1,8 @@
 import 'dart:convert';
 import 'dart:typed_data' show Uint8List;
 
-class FFUploadedFile {
-  const FFUploadedFile({
+class UploadedFile {
+  const UploadedFile({
     this.name,
     this.bytes,
     this.height,
@@ -18,7 +18,7 @@ class FFUploadedFile {
 
   @override
   String toString() =>
-      'FFUploadedFile(name: $name, bytes: ${bytes?.length ?? 0}, height: $height, width: $width, blurHash: $blurHash,)';
+      'UploadedFile(name: $name, bytes: ${bytes?.length ?? 0}, height: $height, width: $width, blurHash: $blurHash,)';
 
   String serialize() => jsonEncode(
         {
@@ -30,7 +30,7 @@ class FFUploadedFile {
         },
       );
 
-  static FFUploadedFile deserialize(String val) {
+  static UploadedFile deserialize(String val) {
     final serializedData = jsonDecode(val) as Map<String, dynamic>;
     final data = {
       'name': serializedData['name'] ?? '',
@@ -39,7 +39,7 @@ class FFUploadedFile {
       'width': serializedData['width'],
       'blurHash': serializedData['blurHash'],
     };
-    return FFUploadedFile(
+    return UploadedFile(
       name: data['name'] as String,
       bytes: Uint8List.fromList(data['bytes'].cast<int>().toList()),
       height: data['height'] as double?,
@@ -59,7 +59,7 @@ class FFUploadedFile {
 
   @override
   bool operator ==(other) =>
-      other is FFUploadedFile &&
+      other is UploadedFile &&
       name == other.name &&
       bytes == other.bytes &&
       height == other.height &&

@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '../../customs/icon_button.dart';
-import '../../customs/ff_themes.dart';
+import '../../customs/themes.dart';
 import '../../customs/utils.dart';
-import '../../customs/ff_widgets.dart';
+import '../../customs/widgets.dart';
 import 'package:flutter/material.dart';
 import 'sign_up_model.dart';
 export 'sign_up_model.dart';
@@ -779,7 +779,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       ),
                     ].divide(const SizedBox(height: 25.0)),
                   ),
-                  FFButtonWidget(
+                  ButtonWidget(
                     onPressed: () async {
                       GoRouter.of(context).prepareAuthEvent();
                       if (_model.passwordTextController.text !=
@@ -826,7 +826,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                       );
                     },
                     text: 'Sign Up',
-                    options: FFButtonOptions(
+                    options: ButtonOptions(
                       width: 307.0,
                       height: 60.0,
                       padding:

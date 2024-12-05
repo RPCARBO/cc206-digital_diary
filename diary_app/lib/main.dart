@@ -16,7 +16,7 @@ void main() async {
 
   await initFirebase();
 
-  final appState = FFAppState(); // Initialize FFAppState
+  final appState = AppState(); // Initialize AppState
   await appState.initializePersistedState();
 
   runApp(ChangeNotifierProvider(

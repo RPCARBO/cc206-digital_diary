@@ -6,7 +6,7 @@ import 'package:provider/provider.dart';
 import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
-import '../ff_themes.dart';
+import '../themes.dart';
 import '../utils.dart';
 
 export 'package:go_router/go_router.dart';
@@ -74,43 +74,43 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
       errorBuilder: (context, state) =>
           appStateNotifier.loggedIn ? const MenuPageWidget() : const LoginWidget(),
       routes: [
-        FFRoute(
+        Route(
           name: '_initialize',
           path: '/',
           builder: (context, _) =>
               appStateNotifier.loggedIn ? const MenuPageWidget() : const LoginWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'Login',
           path: '/login',
           builder: (context, params) => const LoginWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'MenuPage',
           path: '/menuPage',
           builder: (context, params) => const MenuPageWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'DiaryPage',
           path: '/diaryPage',
           builder: (context, params) => const DiaryPageWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'CreateDiary',
           path: '/createDiary',
           builder: (context, params) => const CreateDiaryWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'SignUp',
           path: '/signUp',
           builder: (context, params) => const SignUpWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'ProfilePage',
           path: '/profilePage',
           builder: (context, params) => const ProfilePageWidget(),
         ),
-        FFRoute(
+        Route(
           name: 'PassReset',
           path: '/passReset',
           builder: (context, params) => const PassResetWidget(),
@@ -197,8 +197,8 @@ extension _GoRouterStateExtensions on GoRouterState {
       : TransitionInfo.appDefault();
 }
 
-class FFParameters {
-  FFParameters(this.state, [this.asyncParams = const {}]);
+class Parameters {
+  Parameters(this.state, [this.asyncParams = const {}]);
 
   final GoRouterState state;
   final Map<String, Future<dynamic> Function(String)> asyncParams;
@@ -255,8 +255,8 @@ class FFParameters {
   }
 }
 
-class FFRoute {
-  const FFRoute({
+class Route {
+  const Route({
     required this.name,
     required this.path,
     required this.builder,
@@ -269,7 +269,7 @@ class FFRoute {
   final String path;
   final bool requireAuth;
   final Map<String, Future<dynamic> Function(String)> asyncParams;
-  final Widget Function(BuildContext, FFParameters) builder;
+  final Widget Function(BuildContext, Parameters) builder;
   final List<GoRoute> routes;
 
   GoRoute toRoute(AppStateNotifier appStateNotifier) => GoRoute(
@@ -290,7 +290,7 @@ class FFRoute {
         },
         pageBuilder: (context, state) {
           fixStatusBarOniOS16AndBelow(context);
-          final ffParams = FFParameters(state, asyncParams);
+          final ffParams = Parameters(state, asyncParams);
           final page = ffParams.hasFutures
               ? FutureBuilder(
                   future: ffParams.completeFutures(),

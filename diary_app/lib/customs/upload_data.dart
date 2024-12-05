@@ -9,7 +9,7 @@ import 'package:mime_type/mime_type.dart';
 import 'package:video_player/video_player.dart';
 
 import '../auth/firebase_auth/auth_util.dart';
-import 'ff_themes.dart';
+import 'themes.dart';
 import 'utils.dart';
 
 const allowedFormats = {'image/png', 'image/jpeg', 'video/mp4', 'image/gif'};
@@ -288,7 +288,7 @@ Future<List<SelectedFile>?> selectFiles({
 }
 
 List<SelectedFile> selectedFilesFromUploadedFiles(
-  List<FFUploadedFile> uploadedFiles, {
+  List<UploadedFile> uploadedFiles, {
   String? storageFolderPath,
   bool isMultiData = false,
 }) =>

@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '../customs/icon_button.dart';
-import '../customs/ff_themes.dart';
+import '../customs/themes.dart';
 import '../customs/utils.dart';
-import '../customs/ff_widgets.dart';
+import '../customs/widgets.dart';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'emailverifybool_model.dart';
@@ -169,12 +169,12 @@ class _EmailverifyboolWidgetState extends State<EmailverifyboolWidget> {
                                 Padding(
                                   padding: const EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 16.0, 0.0),
-                                  child: FFButtonWidget(
+                                  child: ButtonWidget(
                                     onPressed: () async {
                                       Navigator.pop(context);
                                     },
                                     text: 'Back',
-                                    options: FFButtonOptions(
+                                    options: ButtonOptions(
                                       padding: const EdgeInsets.all(24.0),
                                       iconPadding:
                                           const EdgeInsetsDirectional.fromSTEB(
@@ -198,12 +198,12 @@ class _EmailverifyboolWidgetState extends State<EmailverifyboolWidget> {
                                     ),
                                   ),
                                 ),
-                                FFButtonWidget(
+                                ButtonWidget(
                                   onPressed: () async {
                                     await authManager.sendEmailVerification();
                                   },
                                   text: 'Resend',
-                                  options: FFButtonOptions(
+                                  options: ButtonOptions(
                                     padding: const EdgeInsets.all(24.0),
                                     iconPadding: const EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),

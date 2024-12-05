@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/emptyentry_widget.dart';
 import '../../customs/icon_button.dart';
-import '../../customs/ff_themes.dart';
+import '../../customs/themes.dart';
 import '../../customs/utils.dart';
 import 'package:flutter/material.dart';
 import 'diary_page_model.dart';

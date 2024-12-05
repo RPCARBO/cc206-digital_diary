@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/components/emailverifybool_widget.dart';
-import '../../customs/ff_themes.dart';
+import '../../customs/themes.dart';
 import '../../customs/utils.dart';
-import '../../customs/ff_widgets.dart';
+import '../../customs/widgets.dart';
 import 'package:flutter/material.dart';
 import 'login_model.dart';
 export 'login_model.dart';
@@ -311,7 +311,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                 Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
-                    FFButtonWidget(
+                    ButtonWidget(
                       onPressed: () async {
                         await authManager.refreshUser();
                         GoRouter.of(context).prepareAuthEvent();
@@ -348,7 +348,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                         }
                       },
                       text: 'Login',
-                      options: FFButtonOptions(
+                      options: ButtonOptions(
                         width: 307.0,
                         height: 60.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(
@@ -402,12 +402,12 @@ class _LoginWidgetState extends State<LoginWidget> {
                       height: 25.0,
                       decoration: const BoxDecoration(),
                     ),
-                    FFButtonWidget(
+                    ButtonWidget(
                       onPressed: () async {
                         context.pushNamed('SignUp');
                       },
                       text: 'Sign Up',
-                      options: FFButtonOptions(
+                      options: ButtonOptions(
                         width: 307.0,
                         height: 60.0,
                         padding: const EdgeInsetsDirectional.fromSTEB(

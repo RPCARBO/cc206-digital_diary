@@ -6,8 +6,8 @@ class CreateDiaryModel extends CustomModel<CreateDiaryWidget> {
   ///  State fields for stateful widgets in this page.
 
   bool isDataUploading1 = false;
-  FFUploadedFile uploadedLocalFile1 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+  UploadedFile uploadedLocalFile1 =
+      UploadedFile(bytes: Uint8List.fromList([]));
 
   // State field(s) for Title widget.
   FocusNode? titleFocusNode;
@@ -18,8 +18,8 @@ class CreateDiaryModel extends CustomModel<CreateDiaryWidget> {
   TextEditingController? diaryEntryTextController;
   String? Function(BuildContext, String?)? diaryEntryTextControllerValidator;
   bool isDataUploading2 = false;
-  FFUploadedFile uploadedLocalFile2 =
-      FFUploadedFile(bytes: Uint8List.fromList([]));
+  UploadedFile uploadedLocalFile2 =
+      UploadedFile(bytes: Uint8List.fromList([]));
   String uploadedFileUrl2 = '';
 
   @override

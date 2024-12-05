@@ -2,7 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '../../customs/icon_button.dart';
-import '../../customs/ff_themes.dart';
+import '../../customs/themes.dart';
 import '../../customs/utils.dart';
 import '../../customs/upload_data.dart';
 import 'package:easy_debounce/easy_debounce.dart';
@@ -94,11 +94,11 @@ class _CreateDiaryWidgetState extends State<CreateDiaryWidget> {
                         selectedMedia.every((m) =>
                             validateFileFormat(m.storagePath, context))) {
                       safeSetState(() => _model.isDataUploading1 = true);
-                      var selectedUploadedFiles = <FFUploadedFile>[];
+                      var selectedUploadedFiles = <UploadedFile>[];
 
                       try {
                         selectedUploadedFiles = selectedMedia
-                            .map((m) => FFUploadedFile(
+                            .map((m) => UploadedFile(
                                   name: m.storagePath.split('/').last,
                                   bytes: m.bytes,
                                   height: m.dimensions?.height,
@@ -572,7 +572,7 @@ class _CreateDiaryWidgetState extends State<CreateDiaryWidget> {
                                                                 .isDataUploading2 =
                                                             true);
                                                         var selectedUploadedFiles =
-                                                            <FFUploadedFile>[];
+                                                            <UploadedFile>[];
                                                         var selectedMedia =
                                                             <SelectedFile>[];
                                                         var downloadUrls =
@@ -586,7 +586,7 @@ class _CreateDiaryWidgetState extends State<CreateDiaryWidget> {
                                                                   _model
                                                                       .uploadedLocalFile1
                                                                 ]
-                                                              : <FFUploadedFile>[];
+                                                              : <UploadedFile>[];
                                                           selectedMedia =
                                                               selectedFilesFromUploadedFiles(
                                                             selectedUploadedFiles,

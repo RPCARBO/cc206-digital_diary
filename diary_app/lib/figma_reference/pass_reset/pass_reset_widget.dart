@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '../../customs/icon_button.dart';
-import '../../customs/ff_themes.dart';
+import '../../customs/themes.dart';
 import '../../customs/utils.dart';
-import '../../customs/ff_widgets.dart';
+import '../../customs/widgets.dart';
 import 'package:flutter/material.dart';
 import 'pass_reset_model.dart';
 export 'pass_reset_model.dart';
@@ -214,7 +214,7 @@ class _PassResetWidgetState extends State<PassResetWidget> {
                 child: Padding(
                   padding:
                       const EdgeInsetsDirectional.fromSTEB(16.0, 24.0, 16.0, 0.0),
-                  child: FFButtonWidget(
+                  child: ButtonWidget(
                     onPressed: () async {
                       if (_model.emailAddressTextController.text.isEmpty) {
                         ScaffoldMessenger.of(context).showSnackBar(
@@ -234,7 +234,7 @@ class _PassResetWidgetState extends State<PassResetWidget> {
                       context.pushNamed('Login');
                     },
                     text: 'Send Link',
-                    options: FFButtonOptions(
+                    options: ButtonOptions(
                       width: double.infinity,
                       height: 50.0,
                       padding:

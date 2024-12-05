@@ -5,7 +5,10 @@ import 'profile_page_widget.dart' show ProfilePageWidget;
 class ProfilePageModel extends CustomModel<ProfilePageWidget> {
   // State fields for stateful widgets in this page.
   bool isDataUploading = false;
-  FFUploadedFile uploadedLocalFile = FFUploadedFile(bytes: Uint8List.fromList([]));
+  
+  UploadedFile uploadedLocalFile =
+      UploadedFile(bytes: Uint8List.fromList([]));
+  
   String uploadedFileUrl = '';
 
   @override
